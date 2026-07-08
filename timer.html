@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Countdown Timer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#f33f84,#12c0cf,#dec328,#0b8e76);
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    text-align:center;
+    padding:40px;
+    width:400px;
+    border-radius:25px;
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+
+h1{
+    color:#fff;
+    margin-bottom:20px;
+    font-size:2.5rem;
+    text-transform:uppercase;
+    letter-spacing:3px;
+}
+
+#timer{
+    font-size:3.5rem;
+    color:#fff;
+    font-weight:bold;
+    margin:20px 0;
+    text-shadow:0 0 15px rgba(255,255,255,0.8);
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:none;
+    outline:none;
+    border-radius:10px;
+    margin-bottom:15px;
+    font-size:1rem;
+    text-align:center;
+}
+
+.buttons{
+    display:flex;
+    gap:10px;
+}
+
+button{
+    flex:1;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:1rem;
+    color:white;
+    transition:0.3s;
+}
+
+.start{
+    background:#00c853;
+}
+
+.reset{
+    background:#ff1744;
+}
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+.footer{
+    margin-top:20px;
+    color:white;
+    opacity:0.8;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Countdown Timer</h1>
+
+    <input type="number" id="minutes" placeholder="Enter Minutes">
+
+    <div id="timer">00:00</div>
+
+    <div class="buttons">
+        <button class="start" onclick="startTimer()">Start</button>
+        <button class="reset" onclick="resetTimer()">Reset</button>
+    </div>
+
+    <div class="footer">
+        Beautiful Countdown Timer
+    </div>
+</div>
+
+<script>
+let countdown;
+let timeLeft = 0;
+
+function startTimer(){
+    clearInterval(countdown);
+
+    const mins = document.getElementById("minutes").value;
+
+    if(mins === "" || mins <= 0){
+        alert("Please enter valid minutes");
+        return;
+    }
+
+    timeLeft = mins * 60;
+
+    countdown = setInterval(() => {
+        let minutes = Math.floor(timeLeft / 60);
+        let seconds = timeLeft % 60;
+
+        document.getElementById("timer").innerHTML =
+            `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+
+        if(timeLeft <= 0){
+            clearInterval(countdown);
+            document.getElementById("timer").innerHTML = "⏰ Time Up!";
+        }
+
+        timeLeft--;
+    }, 1000);
+}
+
+function resetTimer(){
+    clearInterval(countdown);
+    document.getElementById("minutes").value = "";
+    document.getElementById("timer").innerHTML = "00:00";
+}
+</script>
+
+</body>
+</html>
