@@ -15,7 +15,6 @@ A modern and responsive Countdown Timer built using HTML, CSS, and JavaScript. U
 📱 Responsive design
 ⚡ Fast and lightweight
 💻 Beginner-friendly project
-🛠️ Technologies Used
 HTML5
 CSS3
 JavaScript (ES6)
