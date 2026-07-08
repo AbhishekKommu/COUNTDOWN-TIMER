@@ -53,11 +53,5 @@ Abhishek Kommu
 
 GitHub: https://github.com/AbhishekKommu/COUNTDOWN-TIMER/tree/main
 
-How to Add Your Screenshot
-Save the image you shared as screenshot.png.
-Upload it to your GitHub repository.
-Keep it in the same folder as README.md.
-The screenshot will automatically display in the README using:
-![Countdown Timer](screenshot.png)
 
 
