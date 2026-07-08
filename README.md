@@ -60,4 +60,4 @@ Keep it in the same folder as README.md.
 The screenshot will automatically display in the README using:
 ![Countdown Timer](screenshot.png)
 
-This will make your GitHub project look professional and portfolio-ready. 🚀
+
