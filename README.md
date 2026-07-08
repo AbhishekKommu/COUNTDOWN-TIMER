@@ -51,7 +51,7 @@ This project is open-source and available under the MIT License.
 
 Abhishek Kommu
 
-GitHub: https://github.com/your-username
+GitHub: https://github.com/AbhishekKommu/COUNTDOWN-TIMER/tree/main
 
 How to Add Your Screenshot
 Save the image you shared as screenshot.png.
